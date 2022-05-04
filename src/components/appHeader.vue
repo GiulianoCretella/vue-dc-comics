@@ -5,7 +5,7 @@
         </div>
         <nav>
             <ul>
-                <li v-for="(item,index) in navList" :key="index">{{item.nome.toUpperCase()}}</li>
+                <li v-for="(item,index) in navList" :key="index" :class="{'selected' : item.active}">{{item.nome.toUpperCase()}}</li>
             </ul>
         </nav>
     </header>
@@ -81,16 +81,19 @@ header{
         @include flexy-center;
         ul{
            @include flexy-center;
-           justify-content: space-around;
-           
            li{
                list-style-type:none;
-               padding: 0 10px;
+               padding:0 10px;
                font-size: 0.7em;
                font-weight: bolder;
+               line-height: 76px;
+                border-bottom: 4px solid white;
            }
         }
     }
+}
+.selected{
+    border-bottom: 4px solid $dc_mainBlue;
 }
 
 </style>
