@@ -73,17 +73,21 @@ export default {
 header{
     height: 80px;
     display: flex;
+    @include container_width;
     .logo_container{
-        flex: 0 1 35%;
+        flex: 0 1 40%;
        @include flexy-center;
+       justify-content: flex-start;
         img{
             max-width: 60px;
             object-fit: contain;
         }
     }
     nav{
-        flex: 1 1 65%;
+        flex: 0 1 60%;
         @include flexy-center;
+           justify-content: flex-end;
+
         ul{
            @include flexy-center;
            li{
@@ -92,7 +96,7 @@ header{
                font-size: 0.7em;
                font-weight: bolder;
                line-height: 76px;
-                border-bottom: 4px solid white;
+               border-bottom: 4px solid white;
            }
         }
     }
