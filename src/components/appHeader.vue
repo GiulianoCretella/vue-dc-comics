@@ -5,7 +5,7 @@
         </div>
         <nav>
             <ul>
-                <li v-for="(item,index) in navList" :key="index" :class="{'selected' : item.active}">{{item.nome.toUpperCase()}}</li>
+                <li v-for="(item,index) in navList" :key="index" :class="{'selected' : item.active}" @click="item.active = true">{{item.nome.toUpperCase()}}</li>
             </ul>
         </nav>
     </header>
@@ -58,6 +58,11 @@ export default {
                }
            ]
        }
+   },
+   methods:{
+      seleziona(){
+          
+      }
    }
 }
 </script>
