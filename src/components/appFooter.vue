@@ -6,15 +6,15 @@
     </footer>
 </template>
 <script>
-import upFooter from './upFooter.vue';
-import centralFooter from './centralFooter.vue';
-import downFooter from './downFooter.vue';
+import UpFooter from './UpFooter.vue';
+import CentralFooter from './CentralFooter.vue';
+import DownFooter from './DownFooter.vue';
 export default {
-   name:'appFooter',
+   name:'AppFooter',
    components:{
-       upFooter,
-       centralFooter,
-       downFooter,
+       UpFooter,
+       CentralFooter,
+       DownFooter,
    }
 }
 </script>

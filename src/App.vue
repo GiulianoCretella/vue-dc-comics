@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import appFooter from './components/appFooter.vue'
-import appHeader from './components/appHeader.vue'
-import appMain from './components/appMain.vue'
+import AppFooter from './components/AppFooter.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppMain from './components/AppMain.vue'
 
 export default {
   name: 'App',
   components: {
-    appHeader,
-    appFooter,
-    appMain,
+    AppHeader,
+    AppFooter,
+    AppMain,
   }
 }
 </script>

@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-   name:'appHeader',
+   name:'AppHeader',
    data(){
        return {
            navList:[

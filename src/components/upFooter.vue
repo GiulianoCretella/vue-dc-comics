@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-   name:'upFooter'
+   name:'UpFooter'
 }
 </script>
 <style lang="scss">
