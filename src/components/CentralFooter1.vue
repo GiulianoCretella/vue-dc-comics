@@ -17,6 +17,7 @@
     </div>
 </template>
 <script>
+
 export default {
    name:'CentralFooter',
    data(){

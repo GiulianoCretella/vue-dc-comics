@@ -17,6 +17,7 @@ export default {
        DownFooter,
    }
 }
+
 </script>
 <style lang="scss">
 </style>
