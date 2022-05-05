@@ -1,13 +1,15 @@
 <template>
     <header>
-        <div class="logo_container">
-            <img src="../assets/img/dc-logo.png" alt="">
+        <div class="header-container">
+            <div class="logo_container">
+                <img src="../assets/img/dc-logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li v-for="(item,index) in navList" :key="index" :class="{'selected' : item.active}" @click="item.active = true">{{item.nome.toUpperCase()}}</li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li v-for="(item,index) in navList" :key="index" :class="{'selected' : item.active}" @click="item.active = true">{{item.nome.toUpperCase()}}</li>
-            </ul>
-        </nav>
     </header>
 </template>
 <script>
@@ -79,40 +81,42 @@ export default {
 
 <style lang="scss">
 @import '../style/variables';
-
 header{
-    height: 80px;
-    display: flex;
-    @include container_width;
-    .logo_container{
-        flex: 0 1 40%;
-       @include flexy-center;
-       justify-content: flex-start;
-        img{
-            max-width: 60px;
-            object-fit: contain;
-        }
-    }
-    nav{
-        flex: 0 1 60%;
+    background-color: white;
+    .header-container{
+        height: 80px;
+        display: flex;
+        @include container_width;
+        .logo_container{
+            flex: 0 1 40%;
         @include flexy-center;
-           justify-content: flex-end;
+        justify-content: flex-start;
+            img{
+                max-width: 60px;
+                object-fit: contain;
+            }
+        }
+        nav{
+            flex: 0 1 60%;
+            @include flexy-center;
+            justify-content: flex-end;
 
-        ul{
-           @include flexy-center;
-           li{
-               list-style-type:none;
-               padding:0 10px;
-               font-size: 0.7em;
-               font-weight: bolder;
-               line-height: 76px;
-               border-bottom: 4px solid white;
-           }
+            ul{
+            @include flexy-center;
+            li{
+                list-style-type:none;
+                padding:0 10px;
+                font-size: 0.7em;
+                font-weight: bolder;
+                line-height: 76px;
+                border-bottom: 4px solid white;
+            }
+            }
+        }
+        .selected{
+            border-bottom: 4px solid $dc_mainBlue;
         }
     }
-}
-.selected{
-    border-bottom: 4px solid $dc_mainBlue;
 }
 
 </style>

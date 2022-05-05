@@ -3,8 +3,10 @@
         <div class="jumbo"></div>
         <div class="cards-container">
             <div class="grid-boxes">
-                <main-card v-for="(card,index) in thumbs" :key="index" :thumb="card.thumb" :titolo="card.series"/>
+                <span class="load-more current">CURRENT SERIES</span>
+                <main-card v-for="(card,index) in thumbs" :key="index" :thumb="card.thumb" :titolo="card.series.toUpperCase()"/>
             </div>
+            <span class="load-more">LOAD MORE</span>
         </div>
     </main>
 </template>
@@ -105,15 +107,29 @@ export default {
             height: 350px;
         }
         .cards-container{
-            height: 60%;
-            background-color: $dc_ulText_mainDiv;
+            margin-bottom: 20px;
+            text-align: center;
             .grid-boxes{
+                position: relative;
                 @include container_width;
                 margin: 0 auto;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                padding: 20px;
+                padding: 50px;
+
+                .current.load-more{
+                position: absolute;
+                top:-4%;
+                left: 5%;
+                font-size: 1.3em;
+                }
+            }
+            .load-more{
+                color:$dc_title;
+                background-color: $dc_mainBlue;
+                padding: 10px 40px;
+                font-weight: bold;
             }
         }
 

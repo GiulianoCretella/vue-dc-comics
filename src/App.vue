@@ -27,6 +27,7 @@ export default {
 @import './style/general.scss';
 body{
   font-family: 'Roboto', sans-serif;
+  background-color: $dc_ulText_mainDiv;
 }
 
 

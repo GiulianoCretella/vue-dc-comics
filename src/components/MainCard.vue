@@ -1,7 +1,7 @@
 <template>
     <div class="product-card">
         <div class="card">
-             <img :src="thumb" alt="titolo">
+             <img :src="thumb" :alt="titolo">
         </div>
              <h3>{{titolo}}</h3>
 
@@ -35,6 +35,7 @@ export default {
             }
         }
         h3{
+            margin-top: 10px;
             text-align: center;
             font-size: 1em;
             color:$dc_title;
