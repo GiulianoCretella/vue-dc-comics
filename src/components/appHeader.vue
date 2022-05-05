@@ -100,7 +100,6 @@ header{
             flex: 0 1 60%;
             @include flexy-center;
             justify-content: flex-end;
-
             ul{
             @include flexy-center;
             li{

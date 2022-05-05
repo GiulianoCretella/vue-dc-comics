@@ -1,22 +1,24 @@
 <template>
     <main>
         <div class="jumbo"></div>
-        <div class="cards-container">
-            <div class="grid-boxes">
-                <span class="load-more current">CURRENT SERIES</span>
-                <main-card v-for="(card,index) in thumbs" :key="index" :thumb="card.thumb" :titolo="card.series.toUpperCase()"/>
-            </div>
-            <span class="load-more">LOAD MORE</span>
-        </div>
+        <ul>
+            <span class="blue-button top">CURRENT SERIES</span>
+            <li v-for="(item,index) in thumbs" :key="index">
+               <div class="img-container">
+                    <img :src="item.thumb" alt="">
+                </div>
+                 <div class="title-container">
+                    <span>{{item.series.toUpperCase()}}</span>
+                </div>
+            </li>
+        </ul>
+        <span class="blue-button down">LOAD MORE</span>
+
     </main>
 </template>
 <script>
-import MainCard from './MainCard.vue'
 export default {
    name:'AppMain',
-   components:{
-       MainCard
-   },
    data(){
        return{
             thumbs:[
@@ -100,38 +102,57 @@ export default {
 <style lang="scss">
     @import '../style/variables.scss';
     main{
-        width: 100%;
+        text-align: center;
         .jumbo{
             background-image: url(../assets/img/jumbotron.jpg);
             background-size: 100%;
             height: 350px;
         }
-        .cards-container{
-            margin-bottom: 20px;
-            text-align: center;
-            .grid-boxes{
-                position: relative;
-                @include container_width;
-                margin: 0 auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 50px;
-
-                .current.load-more{
-                position: absolute;
-                top:-4%;
-                left: 5%;
-                font-size: 1.3em;
+        ul{
+            @include container_width;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px 0;
+            position: relative;
+            li{
+                flex:0 0 120px;
+                margin: 10px;
+                color:$dc_title;
+                list-style-type: none;
+                text-align: center;
+                .img-container{
+                    width: 100%;
+                    height: 120px;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .title-container{
+                    width: 100%;
+                    padding: 5px;
+                    span{
+                        font-size: 0.7em;
+                        font-weight: bold;
+                    }
                 }
             }
-            .load-more{
-                color:$dc_title;
-                background-color: $dc_mainBlue;
-                padding: 10px 40px;
-                font-weight: bold;
+            .blue-button.top{
+                position: absolute;
+                top: -3%;
+                left: 5%;
             }
         }
-
+        .blue-button{
+            color:$dc_title;
+            background-color: $dc_mainBlue;
+            padding: 5px 20px;
+            font-weight: bold;
+        }
+        .blue-button.down{
+            position: relative;
+            bottom: 20px;
+        }
     }
 </style>
