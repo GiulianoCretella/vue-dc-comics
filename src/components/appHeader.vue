@@ -19,41 +19,51 @@ export default {
                {
                    nome:'characters',
                    active:false,
+                   link:'',
                },
                {
                    nome:'comics',
+                   link:'',
                    active:true,
                },
                {
                    nome:'movies',
+                   link:'',
                    active:false,
                },
                {
                    nome:'tv',
+                   link:'',
                    active:false,
                },
                {
                    nome:'games',
+                   link:'',
                    active:false,
                },
                {
                    nome:'collectibles',
+                   link:'',
                    active:false,
                },
                {
                    nome:'videos',
                    active:false,
+                   link:'',
                },
                {
                    nome:'fans',
+                   link:'',
                    active:false,
                },
                {
                    nome:'news',
+                   link:'',
                    active:false,
                },
                {
                    nome:'shop',
+                   link:'',
                    active:false,
                }
            ]
